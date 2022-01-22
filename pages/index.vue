@@ -17,6 +17,9 @@
         </table>
       </div>
       <div>
+        <input class="text-input mb-4 bg-transparent text-center" placeholder="Use keyboard click here" type="text" v-model="keyboardTextInput" />
+      </div>
+      <div>
         <button
           v-on:click="reset()"
           class="reset-button rounded-full bg-orange-300 drop-shadow-md px-10 py-2"
@@ -89,7 +92,8 @@ export default Vue.extend({
           new Letter('')
         ]
       ],
-      possibleWords: 'Please complete atleast 1 line'
+      possibleWords: 'Please complete atleast 1 line',
+      keyboardTextInput: ''
     }
   },
   mounted() {
@@ -109,6 +113,9 @@ export default Vue.extend({
         const diff = possibles.length - showing.length
         this.possibleWords = `${showing.join(', ')}, and other ${diff} words!!`
       }
+    },
+    keyboardTextInput: function(val: string) {
+      this.keyboardTextInput = ''
     }
   },
   methods: {
@@ -356,6 +363,14 @@ export default Vue.extend({
 }
 
 .reset-button:focus {
+  outline: 0;
+}
+
+.text-input {
+
+}
+
+.text-input:focus {
   outline: 0;
 }
 </style>

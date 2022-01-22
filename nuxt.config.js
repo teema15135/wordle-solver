@@ -12,7 +12,26 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
-      }
+      },
+      { property: "og:site_name", content: "Wordle Solver" },
+      { hid: "og:type", property: "og:type", content: "website"},
+      {
+        hid: "og:title",
+        property: "og:title",
+        content: "Wordle Solver",
+      },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content: "Ran out of brain thinking vocab?",
+      },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: "/wordle-solver/wordle-solver-preview.png",
+      },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/wordle-solver/favicon.ico' }]
   },
